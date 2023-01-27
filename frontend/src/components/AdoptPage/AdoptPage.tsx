@@ -2,31 +2,30 @@ import PetCard from '../PetCard/PetCard';
 import './AdoptPage.css';
 import { Pet } from '../PetCard/PetCard';
 import Categories from '../Categories/Categories';
-import { gql, useQuery } from '@apollo/client';
-import { petQueryWithFilters } from '../../utils/requests';
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { ColorRing } from 'react-loader-spinner';
+import { getPetByLocation } from '../../utils/api';
 
-const AdoptPage = () => {
-  const { state } = useLocation();
-  const [searchParameters, setSearchParameters] = useState(
-    state ?? petQueryWithFilters({ location: '', type: '' })
-  );
-  const [petLocation, setpetLocation] = useState('');
+const AdoptPage = ({
+  setSearchResults,
+  searchResults,
+}: {
+  setSearchResults: Function;
+  searchResults: [];
+}) => {
+  const [petLocation, setPetLocation] = useState('');
   const [petType, setPetType] = useState('');
-  const { data } = useQuery(
-    gql`
-      ${searchParameters}
-    `
-  );
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLocationSubmit = (event: any) => {
     event.preventDefault();
-    setSearchParameters(() =>
-      petQueryWithFilters({ location: petLocation, type: petType })
-    );
+    setIsLoading(true);
+    getPetByLocation(petLocation).then((data) => setSearchResults(data));
+    setIsLoading(false);
+    setPetLocation('');
   };
+
   const handlePetSelection = (selection: string) => {
     setPetType(selection);
   };
@@ -42,17 +41,18 @@ const AdoptPage = () => {
           type="text"
           className="form__input adopt__input"
           placeholder="Search your area"
-          onChange={(event) => setpetLocation(event.target.value as string)}
+          value={petLocation}
+          onChange={(event) => setPetLocation(event.target.value)}
         />
       </form>
       <Categories onSelection={handlePetSelection} />
 
       <section className="results">
-        {data ? (
-          data.allPets.map((pet: Pet) => <PetCard pet={pet} key={pet.id} />)
-        ) : (
-          <ColorRing />
-        )}
+        {isLoading && <ColorRing />}
+
+        {/* Create Results Section */}
+        {searchResults &&
+          searchResults.map((pet: Pet) => <PetCard pet={pet} key={pet.id} />)}
       </section>
     </section>
   );

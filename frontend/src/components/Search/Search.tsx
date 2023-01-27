@@ -5,13 +5,13 @@ import { useEffect } from 'react';
 import FormPage from '../FormPage/FormPage';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { petQueryWithFilters } from '../../utils/requests';
+import { getPetByLocation } from '../../utils/api';
 
 interface SearchQuery {
   query: string;
 }
 
-const Search = () => {
+const Search = ({ setSearchResults }: { setSearchResults: Function }) => {
   const {
     register,
     handleSubmit,
@@ -33,9 +33,11 @@ const Search = () => {
 
   const navigation = useNavigate();
 
-  const submitSearchData = ({query}: SearchQuery) => {
-    const petsByLocation = petQueryWithFilters({location: query, type: ''})
-    navigation('/adopt', { state : petsByLocation  });
+  const submitSearchData = ({ query }: SearchQuery) => {
+    getPetByLocation(query).then((data) => {
+      setSearchResults(data);
+      navigation('/adopt');
+    });
   };
   return (
     <FormPage

@@ -70,7 +70,6 @@ const Main = () => {
           />
         </div>
       </section>
-      <Team />
 
     </main>
   );

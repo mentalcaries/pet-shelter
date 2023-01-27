@@ -9,11 +9,11 @@ export type Pet = {
   age: number;
   type: string;
   photo: string;
-  location: string;
+  city: string;
 };
 
 const PetCard = ({ pet }: { pet: Pet }) => {
-  const { name, age, type, photo, location } = pet;
+  const { name, age, type, photo, city } = pet;
 
   return (
     <article className="card">
@@ -22,7 +22,7 @@ const PetCard = ({ pet }: { pet: Pet }) => {
 
       <div className="card__location">
         <img src={pin} alt="" className="card__pin" />
-        <p className="card__text">{location}</p>
+        <p className="card__text">{city}</p>
       </div>
 
       <div className="card__buttons">
