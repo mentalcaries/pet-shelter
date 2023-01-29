@@ -9,21 +9,21 @@ import React from 'react';
 
 const Categories = ({ onSelection }: {onSelection: (name: string)=> void}) => {
   const categoryButtons = [
-    { name: 'cats', image: catIcon },
-    { name: 'dogs', image: dogIcon },
-    { name: 'birds', image: birdIcon },
-    { name: 'bunnies', image: bunnyIcon },
-    { name: 'others', image: spiderIcon },
+    { name: 'cats', image: catIcon, type: 'cat' },
+    { name: 'dogs', image: dogIcon, type: 'dog' },
+    { name: 'birds', image: birdIcon, type: 'bird' },
+    { name: 'bunnies', image: bunnyIcon, type: 'rabbit' },
+    { name: 'others', image: spiderIcon, type: 'other' },
   ];
 
   return (
     <div className="categories">
-      {categoryButtons.map(({ name, image }, index) => (
+      {categoryButtons.map(({ name, image, type }, index) => (
         <button
           className="categories__button"
           value={name}
           key={index}
-          onClick={() => onSelection(name)}
+          onClick={() => onSelection(type)}
         >
           <img src={image} alt="" className="button__icon" />{' '}
           <p className="button__name">{name}</p>

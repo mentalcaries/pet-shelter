@@ -2,8 +2,7 @@ import PetCard from '../PetCard/PetCard';
 import './AdoptPage.css';
 import { Pet } from '../PetCard/PetCard';
 import Categories from '../Categories/Categories';
-import { useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ColorRing } from 'react-loader-spinner';
 import { getPetByLocation } from '../../utils/api';
 
@@ -15,11 +14,18 @@ const AdoptPage = ({
   searchResults: [];
 }) => {
   const [petLocation, setPetLocation] = useState('');
-  const [petType, setPetType] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [displayedResults, setDisplayedResults] = useState([])
+
+
+  useEffect(()=>{
+    setDisplayedResults(searchResults)
+  }, [searchResults])
 
   const handleLocationSubmit = (event: any) => {
     event.preventDefault();
+    if (petLocation === '') return;
+
     setIsLoading(true);
     getPetByLocation(petLocation).then((data) => setSearchResults(data));
     setIsLoading(false);
@@ -27,7 +33,10 @@ const AdoptPage = ({
   };
 
   const handlePetSelection = (selection: string) => {
-    setPetType(selection);
+    const filteredArray = searchResults.filter(
+      (pet: Pet) => pet.type === selection
+    );
+    setDisplayedResults(filteredArray);
   };
 
   return (
@@ -51,8 +60,8 @@ const AdoptPage = ({
         {isLoading && <ColorRing />}
 
         {/* Create Results Section */}
-        {searchResults &&
-          searchResults.map((pet: Pet) => <PetCard pet={pet} key={pet.id} />)}
+        {displayedResults &&
+          displayedResults.map((pet: Pet) => <PetCard pet={pet} key={pet.id} />)}
       </section>
     </section>
   );
