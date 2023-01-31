@@ -12,7 +12,7 @@ const Categories = ({ onSelection }: {onSelection: (name: string)=> void}) => {
     { name: 'cats', image: catIcon, type: 'cat' },
     { name: 'dogs', image: dogIcon, type: 'dog' },
     { name: 'birds', image: birdIcon, type: 'bird' },
-    { name: 'bunnies', image: bunnyIcon, type: 'rabbit' },
+    { name: 'rabbits', image: bunnyIcon, type: 'rabbit' },
     { name: 'others', image: spiderIcon, type: 'other' },
   ];
 

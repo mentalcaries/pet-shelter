@@ -12,6 +12,7 @@
   justify-content: space-between;
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
+  min-height: 180px;
 }
 
 .adopt__search{
@@ -23,6 +24,21 @@
   max-width: 240px;
   width: 100%;
   text-align: center;
+}
+
+.results__error{
+  text-align: center;
+}
+
+.results__error-text {
+  font-family: var(--form-text);
+  font-size: 24px;
+  margin: 16px 0px;
+}
+
+.results__error-image{
+  max-height: 200px;
+  border-radius: 50%;
 }
 
 @media screen and (max-width: 1024px){

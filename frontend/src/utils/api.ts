@@ -1,7 +1,7 @@
 const BASE_URL = process.env.REACT_APP_API_URI || 'http://localhost:4000';
 
-const checkServerResponse = (res: Response) => {
-  return res.ok ? res.json() : Promise.reject(`Error: ${res}`);
+const checkServerResponse = (reponse: Response) => {
+  return reponse.ok ? reponse.json() : console.error(`Error: ${reponse}`);
 };
 
 const getAllPets = () => {

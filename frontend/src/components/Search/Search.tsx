@@ -69,6 +69,7 @@ const Search = ({ setSearchResults }: { setSearchResults: Function }) => {
           })}
           className="form__input"
           placeholder="Type your city"
+          autoComplete='off'
         />
         <p className="form__error">{errors.query?.message || errorMessage}</p>
         <input

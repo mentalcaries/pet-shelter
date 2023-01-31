@@ -5,6 +5,7 @@ import Categories from '../Categories/Categories';
 import { useEffect, useState } from 'react';
 import { ColorRing } from 'react-loader-spinner';
 import { getPetByLocation } from '../../utils/api';
+import sadDog from '../../images/sad-dog.jpg';
 
 const AdoptPage = ({
   setSearchResults,
@@ -15,16 +16,18 @@ const AdoptPage = ({
 }) => {
   const [petLocation, setPetLocation] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [displayedResults, setDisplayedResults] = useState([])
+  const [displayedResults, setDisplayedResults] = useState([]);
 
-
-  useEffect(()=>{
-    setDisplayedResults(searchResults)
-  }, [searchResults])
+  useEffect(() => {
+    setDisplayedResults(searchResults);
+  }, [searchResults]);
 
   const handleLocationSubmit = (event: any) => {
     event.preventDefault();
-    if (petLocation === '') return;
+    setSearchResults([]);
+    if (petLocation.length < 2) {
+      return;
+    }
 
     setIsLoading(true);
     getPetByLocation(petLocation).then((data) => setSearchResults(data));
@@ -33,9 +36,19 @@ const AdoptPage = ({
   };
 
   const handlePetSelection = (selection: string) => {
-    const filteredArray = searchResults.filter(
-      (pet: Pet) => pet.type === selection
-    );
+    let filteredArray;
+    if (selection === 'other') {
+      filteredArray = searchResults.filter(
+        (pet: Pet) =>
+          pet.type !== 'dog' &&
+          pet.type !== 'cat' &&
+          pet.type !== 'rabbit' &&
+          pet.type !== 'bird'
+      );
+    } else
+      filteredArray = searchResults.filter(
+        (pet: Pet) => pet.type === selection
+      );
     setDisplayedResults(filteredArray);
   };
 
@@ -60,8 +73,14 @@ const AdoptPage = ({
         {isLoading && <ColorRing />}
 
         {/* Create Results Section */}
-        {displayedResults &&
-          displayedResults.map((pet: Pet) => <PetCard pet={pet} key={pet.id} />)}
+        {displayedResults?.length > 0 ? (
+          displayedResults.map((pet: Pet) => <PetCard pet={pet} key={pet.id} />)
+        ) : (
+          <div className='results__error'>
+          <p className="results__error-text">No pets found in this area 😟</p>
+          <img src={sadDog} className="results__error-image" alt="Beagle with sad eyes" />
+          </div>
+        )}
       </section>
     </section>
   );
