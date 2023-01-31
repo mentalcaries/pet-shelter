@@ -95,7 +95,7 @@
 }
 .form__submit_search {
   background-color: var(--blue);
-  margin: 0px 0px 20px;
+  margin: 8px 0px 20px;
 }
 
 .form__submit_disabled {
