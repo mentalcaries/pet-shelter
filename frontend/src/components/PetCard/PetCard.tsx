@@ -1,19 +1,21 @@
 import './PetCard.css';
 import pin from '../../images/location.png';
+import { calculateCurrentAge } from '../../utils/dates';
 
-import React from 'react';
 
 export type Pet = {
   id: number;
   name: string;
-  age: number;
+  birthDate: string;
   type: string;
   photo: string;
   city: string;
 };
 
 const PetCard = ({ pet }: { pet: Pet }) => {
-  const { name, age, type, photo, city } = pet;
+  const { name, birthDate, type, photo, city } = pet;
+  
+  const age = calculateCurrentAge(birthDate)
 
   return (
     <article className="card">
@@ -27,7 +29,7 @@ const PetCard = ({ pet }: { pet: Pet }) => {
 
       <div className="card__buttons">
         <button className="card__button card__button_pet">{type}</button>
-        <button className="card__button card__button_age">{age >1 ? `${age} years`: `${age} year`}</button>
+        <button className="card__button card__button_age">{age}</button>
       </div>
     </article>
   );

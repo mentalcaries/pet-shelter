@@ -1,7 +1,7 @@
 export interface Pets {
     id: number,
     name: string,
-    age: number,
+    birthDate: string,
     photo: string,
     type: string,
     city: string
@@ -12,7 +12,7 @@ const PetData: Pets[] = [
     {
         id: 1,
         name: 'Barnaby',
-        age: 1,
+        birthDate: 'Jan, 2022',
         photo: './pet1.jpg',
         type: 'Cat',
         city: 'Boulder'
@@ -20,7 +20,7 @@ const PetData: Pets[] = [
     {
         id: 2,
         name: 'Mary',
-        age: 1,
+        birthDate: 'Jan, 2022',
         photo: './pet1.jpg',
         type: 'Cat',
         city: 'Boulder'
@@ -28,7 +28,7 @@ const PetData: Pets[] = [
     {
         id: 3,
         name: 'Maryann',
-        age: 1,
+        birthDate: 'Jan, 2022',
         photo: './pet1.jpg',
         type: 'Cat',
         city: 'Boulder'
