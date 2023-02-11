@@ -10,7 +10,7 @@
   text-align: center;
 }
 
-.shelter__image {
+.shelter__logo {
   max-width: 280px;
   width: 100%;
   border: 1px solid grey;
@@ -58,12 +58,14 @@
 
 .shelter__links{
   max-width: 540px;
-  margin: 16px auto;
+  width: 100%;
+  margin: 32px auto;
 }
 
 .shelter__suggestions{
   font-family: var(--main-title);
   font-size: 24px;
+  margin: 16px 0px;
 }
 
 .shelter__location{
@@ -84,3 +86,8 @@
   margin-left: 6px;
 }
 
+
+.suggestions__list{
+  display: flex;
+  justify-content: space-between;
+}

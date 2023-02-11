@@ -1,3 +1,4 @@
+import barnaby from '../images/barnaby.png'
 export interface Pets {
     id: number,
     name: string,
@@ -6,6 +7,7 @@ export interface Pets {
     type: string,
     city: string
     img? : string
+
 }
 
 const PetData: Pets[] = [
@@ -13,7 +15,7 @@ const PetData: Pets[] = [
         id: 1,
         name: 'Barnaby',
         birthDate: 'Jan, 2022',
-        photo: './pet1.jpg',
+        photo: barnaby,
         type: 'Cat',
         city: 'Boulder'
     },
@@ -21,7 +23,7 @@ const PetData: Pets[] = [
         id: 2,
         name: 'Mary',
         birthDate: 'Jan, 2022',
-        photo: './pet1.jpg',
+        photo: barnaby,
         type: 'Cat',
         city: 'Boulder'
     },
@@ -29,7 +31,7 @@ const PetData: Pets[] = [
         id: 3,
         name: 'Maryann',
         birthDate: 'Jan, 2022',
-        photo: './pet1.jpg',
+        photo: barnaby,
         type: 'Cat',
         city: 'Boulder'
     }

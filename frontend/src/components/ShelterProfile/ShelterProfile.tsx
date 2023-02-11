@@ -1,13 +1,15 @@
 import './ShelterProfile.css';
 import logo from '../../images/rescue.svg';
 import pin from '../../images/location.png';
+import PetCard from '../PetCard/PetCard';
+import PetData from '../../services/petData';
 
 
 const ShelterProfile = () => {
   return (
     <section className="shelter">
       <div className="shelter__details">
-        <img src={logo} alt="" className="shelter__image" />
+        <img src={logo} alt={`Logo for Pet Shelter`} className="shelter__logo" />
         <h2 className="shelter__title">Animal Rescue</h2>
         <div className="shelter__location">
         <img src={pin} alt="" className="shelter__pin" />
@@ -29,8 +31,10 @@ const ShelterProfile = () => {
         <h3 className="shelter__suggestions">
           Animals at this shelter
         </h3>
-        {/* Animals from this shelter */}
-        {/* Pet Cards */}
+        <div className="suggestions__list">
+
+        {PetData.map(pet => <PetCard pet={pet} cardType="mini"/>)}
+        </div>
       </div>
 
       <div className="shelter__links">

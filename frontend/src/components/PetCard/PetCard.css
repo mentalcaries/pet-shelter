@@ -8,14 +8,23 @@
   gap: 5px;
   flex-direction: column;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
 }
+
+.card__mini{
+  min-height: 232px;
+}
+
 
 .card__image {
   max-width: 234px;
   max-height: 228px;
   object-fit: cover;
   border-radius: 20px;
+}
+
+.card__image_mini{
+  max-width: 160px;
 }
 
 .card__buttons {
