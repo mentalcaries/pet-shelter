@@ -1,6 +1,5 @@
 import './ShelterCard.css';
 import pin from '../../images/location.png';
-
 import React from 'react';
 
 export type Shelter = {
@@ -11,7 +10,7 @@ export type Shelter = {
 }
 
 
-const ShelterCard = ({ name, photo, location }: any) => {
+const ShelterCard = ({ name, photo, location }: Shelter) => {
 
   return (
     <article className="shelter-card">

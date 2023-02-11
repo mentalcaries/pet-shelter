@@ -4,7 +4,6 @@ import donateImage from '../../images/dogbrush.png';
 import sponsorImage from '../../images/cat-mailbox.png';
 import { Link } from 'react-router-dom';
 import Hero from '../Hero/Hero';
-import Team from '../Team/Team';
 
 
 const Main = () => {

@@ -9,7 +9,8 @@ import Search from '../Search/Search';
 import Register from '../Register/Register';
 import UserProfile from '../UserProfile/UserProfile';
 import AdoptPage from '../AdoptPage/AdoptPage';
-import { Pet } from '../PetCard/PetCard';
+import ShelterProfile from '../ShelterProfile/ShelterProfile';
+
 
 function App() {
   const [searchResults, setSearchResults] = useState<[]>([]);
@@ -25,9 +26,17 @@ function App() {
         />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<UserProfile />} />
+        <Route path="/shelter" element={<ShelterProfile />} />
+
+
         <Route
           path="/adopt"
-          element={<AdoptPage setSearchResults={setSearchResults} searchResults={searchResults} />}
+          element={
+            <AdoptPage
+              setSearchResults={setSearchResults}
+              searchResults={searchResults}
+            />
+          }
         />
         <Route path="/" element={<Main />} />
       </Routes>

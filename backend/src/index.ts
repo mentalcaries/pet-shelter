@@ -12,6 +12,7 @@ export const server = new ApolloServer({
 
 const PORT = process.env.PORT || 5500;
 
+
 server.listen(PORT).then(({ url }) => {
   console.log(`🚀 Server running on ${url}`);
 });

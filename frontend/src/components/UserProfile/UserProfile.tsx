@@ -15,7 +15,7 @@ const UserProfile = () => {
   const sheltersDonated = ShelterData.map((shelter) => {
     return (
       <ShelterCard
-        key={shelter.id}
+        id={shelter.id}
         name={shelter.name}
         photo={shelter.photo}
         location={shelter.location}

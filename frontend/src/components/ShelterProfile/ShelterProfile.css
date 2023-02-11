@@ -1,0 +1,67 @@
+.shelter-profile {
+  max-width: 1024px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.shelter-profile__details {
+  text-align: center;
+}
+
+.shelter-profile__image {
+  max-width: 280px;
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 50%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+
+.shelter-profile__title {
+  font-family: var(--main-title);
+  text-transform: uppercase;
+  margin: 24px 0px;
+}
+
+.shelter-profile__description{
+  max-width: 480px;
+  margin: 16px auto;
+}
+
+.shelter-profile__location {
+  font-family: var(--main-text);
+  font-size: 16px;
+  color: var(--grey);
+}
+
+.shelter-profile__description {
+  font-family: var(--main-text);
+  font-size: 20px;
+  color: var(--black);
+  text-align: left;
+}
+
+.shelter-profile__buttons{
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.shelter-profile__button{
+  max-width: 200px;
+  width: 100%;
+}
+
+.shelter-profile__links{
+  max-width: 540px;
+  margin: 16px auto;
+}
+
+.shelter-profile__suggestions{
+  font-family: var(--main-title);
+  font-size: 24px;
+}
