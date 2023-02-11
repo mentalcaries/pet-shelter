@@ -1,35 +1,40 @@
 import './ShelterProfile.css';
 import logo from '../../images/rescue.svg';
+import pin from '../../images/location.png';
+
 
 const ShelterProfile = () => {
   return (
-    <section className="shelter-profile">
-      <div className="shelter-profile__details">
-        <img src={logo} alt="" className="shelter-profile__image" />
-        <h2 className="shelter-profile__title">Pet Love Shelter</h2>
-        <p className="shelter-profile__location">Boulder, Colorado</p>
-        <p className="shelter-profile__description">
+    <section className="shelter">
+      <div className="shelter__details">
+        <img src={logo} alt="" className="shelter__image" />
+        <h2 className="shelter__title">Animal Rescue</h2>
+        <div className="shelter__location">
+        <img src={pin} alt="" className="shelter__pin" />
+        <p className="shelter__caption">Boulder, Colorado</p>
+      </div>
+        <p className="shelter__description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
           impedit minus saepe quibusdam provident dolorem necessitatibus, quis a
           ea odio similique nemo ullam. Vitae culpa, aliquid eos dicta sed
           sequi.
         </p>
-        <div className="shelter-profile__buttons">
-          <button className="shelter-profile__button">Donate</button>
-          <button className="shelter-profile__button button__blue">Sponsor a Pet</button>
+        <div className="shelter__buttons">
+          <button className="shelter__button">Donate</button>
+          <button className="shelter__button button__blue">Sponsor a Pet</button>
         </div>
       </div>
 
-      <div className="shelter-profile__links">
-        <h3 className="shelter-profile__suggestions">
+      <div className="shelter__links">
+        <h3 className="shelter__suggestions">
           Animals at this shelter
         </h3>
         {/* Animals from this shelter */}
         {/* Pet Cards */}
       </div>
 
-      <div className="shelter-profile__links">
-        <h3 className="shelter-profile__suggestions">
+      <div className="shelter__links">
+        <h3 className="shelter__suggestions">
           More shelters in the area
         </h3>
         {/* Animals from this shelter */}

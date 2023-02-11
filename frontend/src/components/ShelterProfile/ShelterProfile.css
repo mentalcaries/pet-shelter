@@ -1,4 +1,4 @@
-.shelter-profile {
+.shelter {
   max-width: 1024px;
   padding: 24px;
   display: flex;
@@ -6,11 +6,11 @@
   margin: 0 auto;
 }
 
-.shelter-profile__details {
+.shelter__details {
   text-align: center;
 }
 
-.shelter-profile__image {
+.shelter__image {
   max-width: 280px;
   width: 100%;
   border: 1px solid grey;
@@ -19,31 +19,31 @@
 
 }
 
-.shelter-profile__title {
+.shelter__title {
   font-family: var(--main-title);
   text-transform: uppercase;
   margin: 24px 0px;
 }
 
-.shelter-profile__description{
+.shelter__description{
   max-width: 480px;
   margin: 16px auto;
 }
 
-.shelter-profile__location {
+.shelter__location {
   font-family: var(--main-text);
   font-size: 16px;
   color: var(--grey);
 }
 
-.shelter-profile__description {
+.shelter__description {
   font-family: var(--main-text);
   font-size: 20px;
   color: var(--black);
   text-align: left;
 }
 
-.shelter-profile__buttons{
+.shelter__buttons{
   max-width: 480px;
   width: 100%;
   display: flex;
@@ -51,17 +51,36 @@
   justify-content: space-between;
 }
 
-.shelter-profile__button{
+.shelter__button{
   max-width: 200px;
   width: 100%;
 }
 
-.shelter-profile__links{
+.shelter__links{
   max-width: 540px;
   margin: 16px auto;
 }
 
-.shelter-profile__suggestions{
+.shelter__suggestions{
   font-family: var(--main-title);
   font-size: 24px;
 }
+
+.shelter__location{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shelter__pin{
+  max-height: 20px;
+}
+
+.shelter__caption {
+  font-family: var(--main-text);
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--grey);
+  margin-left: 6px;
+}
+
