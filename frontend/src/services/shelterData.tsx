@@ -1,3 +1,6 @@
+import logo from '../images/lincoln.png';
+
+
 interface Shelters {
     id: number,
     name: string,
@@ -11,22 +14,22 @@ const ShelterData: Shelters[] = [
         id: 1,
         name: 'Dream Cats',
         location: 'Boulder, Colorado',
-        photo: './shelter1.jpg',
-        img: './shelter1.jpg',
+        photo: logo,
+        img: logo,
     },
     {
         id: 2,
         name: 'Dream Dogs',
         location: 'New York, New York',
-        photo: './shelter1.jpg',
-        img: './shelter1.jpg',
+        photo: logo,
+        img: logo,
     },
     {
         id: 3,
         name: 'Cherish Dogs',
         location: 'New York, New York',
-        photo: './shelter1.jpg',
-        img: './shelter1.jpg',
+        photo: logo,
+        img: logo,
     }
 
 ]
