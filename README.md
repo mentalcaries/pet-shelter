@@ -1,14 +1,28 @@
-# voyage-tasks
+# Pet Adoption Platform
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+<div align="center">
+  
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" height=20 alt="typescript logo">
+  <img src="https://img.shields.io/badge/React-007ACC?style=for-the-badge&logo=react&logoColor=white">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" height=20 alt="css logo">
+  
+</div>
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+## About the Project
+An adoption platform that aims to streamline the process of:
+- Posting up pets for adption
+- Finding pets from shelters in need of a second home
+- Sponsoring pets at shelters
+- Donating to shelters
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
 
-> Own it & Make it your Own!
+## Features
+- Responsive design down to 320px
+- Form validation for the contact form
+
+## Tech Stack
+| Technology |  |
+|---|---|
+| TypeScript | To ensure type safety and reduce errors throughout the app, especially with passing of props |
+
+
