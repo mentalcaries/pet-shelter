@@ -3,7 +3,7 @@ const ONE_WEEK_IN_MILLISECONDS = 604800000;
 const MONTHS_IN_ONE_YEAR = 12;
 
 export const calculateCurrentAge = (dateString: string) => {
-  const dateStringWithDay = `01, ${dateString}`
+  const dateStringWithDay = `01, ${dateString}`;
   const dateOfBirth = Date.parse(dateString) || Date.parse(dateStringWithDay);
   const today = new Date().getTime();
 
