@@ -42,6 +42,8 @@ const Search = ({ setSearchResults }: { setSearchResults: Function }) => {
   const submitSearchData = ({ query }: SearchQuery) => {
     getPetByLocation(query)
       .then((data) => {
+        if(!data) throw Error('No results');
+        
         setSearchResults(data);
         navigation('/adopt');
       })
