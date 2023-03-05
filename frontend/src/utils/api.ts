@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_API_URI || 'http://localhost:4000';
+const BASE_URL = import.meta.env.VITE__API_URI || 'http://localhost:4000';
 
 const checkServerResponse = (reponse: Response) => {
   return reponse.ok ? reponse.json() : console.error(`Error: ${reponse}`);

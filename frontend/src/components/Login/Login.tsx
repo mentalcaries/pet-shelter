@@ -4,20 +4,13 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import FormPage from '../FormPage/FormPage';
 import { useForm } from 'react-hook-form';
-import { gql } from '@apollo/client';
 
 interface LoginData {
   email: string;
   password: string;
 }
 
-const LOGIN_MUTATION = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
-    }
-  }
-`;
+
 
 const Login = () => {
   const {
