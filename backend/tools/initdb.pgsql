@@ -1,49 +1,47 @@
+-- Delete Tables
+DROP TABLE IF EXISTS pets, users, shelters, ;
+
 -- CreateEnum
 CREATE TYPE "UserType" AS ENUM ('INDIVIDUAL', 'SHELTER');
 
 -- CreateTable
-CREATE TABLE "Pet" (
-    "id" SERIAL NOT NULL,
+CREATE TABLE "pets" (
+    "id" SERIAL NOT NULL PRIMARY KEY,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "name" TEXT NOT NULL,
     "age" INTEGER NOT NULL,
     "type" TEXT NOT NULL,
     "gender" TEXT NOT NULL,
-    "location" TEXT NOT NULL,
+    "city" TEXT NOT NULL,
+    "country" TEXT NOT NULL,
     "shelterId" INTEGER NOT NULL,
-    "photo" TEXT NOT NULL,
     "breed" TEXT,
+    "photo" TEXT NOT NULL,
     "vaccinated" BOOLEAN DEFAULT false,
     "neutered" BOOLEAN DEFAULT false,
-    "adopted" BOOLEAN DEFAULT false,
+    "adopted" BOOLEAN DEFAULT false
 
-    CONSTRAINT "Pet_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
-CREATE TABLE "User" (
-    "id" SERIAL NOT NULL,
+CREATE TABLE "users" (
+    "id" SERIAL NOT NULL PRIMARY KEY,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
-    "password" TEXT NOT NULL,
     "type" "UserType" NOT NULL DEFAULT 'INDIVIDUAL',
-    "location" TEXT NOT NULL,
-
-    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+    "location" TEXT
 );
 
 -- CreateTable
-CREATE TABLE "Shelter" (
-    "id" SERIAL NOT NULL,
+CREATE TABLE "shelters" (
+    "id" SERIAL NOT NULL PRIMARY KEY,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "name" TEXT NOT NULL,
-
-    CONSTRAINT "Shelter_pkey" PRIMARY KEY ("id")
+    "name" TEXT NOT NULL
 );
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
 -- AddForeignKey
-ALTER TABLE "Pet" ADD CONSTRAINT "Pet_shelterId_fkey" FOREIGN KEY ("shelterId") REFERENCES "Shelter"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "pets" ADD CONSTRAINT "pet_shelterId_fkey" FOREIGN KEY ("shelterId") REFERENCES "shelters"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

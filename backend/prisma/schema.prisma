@@ -7,14 +7,14 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-    url      = env("DATABASE_URL")
+  url      = env("DATABASE_URL")
 }
 
 model Pet {
   id          String      @id @default(uuid())
   createdAt   DateTime @default(now())
   name        String
-  age         Int
+  birthDate   String
   type        String
   gender      String    
   city        String
@@ -25,12 +25,12 @@ model Pet {
   neutered    Boolean?  @default(false)
   adopted     Boolean?  @default(false)
   owner       User     @relation(fields: [ownerId], references:[id])
-  ownerId      String
+  ownerId     String
 }
 
 model User {
   id          String      @id @default(uuid())
-  createdAt   DateTime @default(now())
+  createdAt   DateTime    @default(now())
   username    String
   name        String
   email       String   @unique
@@ -41,12 +41,7 @@ model User {
   pets        Pet[]
 }
 
-// model Shelter {
-//   id          Int      @id @default(autoincrement())
-//   createdAt   DateTime @default(now())
-//   name        String
-//   pets        Pet[]
-// }
+
 
 enum UserType {
   INDIVIDUAL
