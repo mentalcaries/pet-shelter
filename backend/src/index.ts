@@ -1,6 +1,7 @@
-import express, { Express, NextFunction, Request, Response } from 'express';
+import express from 'express';
 import dotenv from 'dotenv';
 import { PrismaClient } from '@prisma/client';
+
 const cors = require('cors');
 const AppError = require('./utils/appError')
 const globalErrorHandler = require('./utils/errorController')
