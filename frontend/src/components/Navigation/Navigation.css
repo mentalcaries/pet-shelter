@@ -80,3 +80,9 @@
 }
 
 }
+
+@media (prefers-color-scheme: dark)  {
+  .nav__link {
+    color: white;
+  }
+}
