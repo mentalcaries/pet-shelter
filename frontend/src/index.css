@@ -19,6 +19,7 @@
   --yellow: #fff202;
   --grey: #666;
   --white: #fff;
+  --dark-blue: #182c34;
   --black: #000000;
 
   /* Font Variables */
@@ -64,5 +65,11 @@ button {
 @media (max-width: 480px) {
   h1 {
     font-size: 32px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-blue);
   }
 }

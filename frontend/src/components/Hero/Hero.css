@@ -8,3 +8,8 @@
     text-align: center;
 }
 
+@media (prefers-color-scheme: dark) {
+    .hero {
+        color: var(--blue);
+    }
+}
